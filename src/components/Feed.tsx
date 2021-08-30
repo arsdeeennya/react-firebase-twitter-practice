@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "./Feed.module.css";
+import { auth } from "../firebase";
 
 const Feed: React.FC = () => {
 
   return (
-    <div className={styles.feed}>
-      
+    <div>
+      Feed
+      <button onClick={ () => auth.signOut()}>ろぐあうと</button>
     </div>
   );
 };
