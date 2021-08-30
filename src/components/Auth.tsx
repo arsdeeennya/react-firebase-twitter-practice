@@ -86,9 +86,12 @@ const Auth: React.FC = () => {
   const [username, setUsername] = useState("");
   const [avatarImage, setAvatarImage] = useState<File | null>(null);
   const [isLogin, setIsLogin] = useState(true);
-  const [openModal, setOpenModal] = React.useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
+  
   const onChangeImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // !はnon-null assertion operateで、undefinedでもnullでもないことをコンパイラに伝える
+    // 何もないのに[0]にアクセスできないから
     if (e.target.files![0]) {
       setAvatarImage(e.target.files![0]);
       e.target.value = "";
@@ -272,7 +275,7 @@ const Auth: React.FC = () => {
             <Button
               fullWidth
               variant="contained"
-              color="default"
+              color="primary"
               className={classes.submit}
               startIcon={<CameraIcon />}
               onClick={signInGoogle}
