@@ -23,7 +23,6 @@ export const userSlice = createSlice({
     },
   },
 });
-
 // dispatchするには3つのアクションをexportする必要がある
 export const { login, logout, updateUserProfile } = userSlice.actions;
 // useSelectorを使う時に呼び出す関数

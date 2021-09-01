@@ -129,6 +129,7 @@ const Auth: React.FC = () => {
       await storage.ref(`avatars/${fileName}`).put(avatarImage);
       url = await storage.ref("avatars").child(fileName).getDownloadURL();
     }
+    // オプショナルチェイニング演算子
     await authUser.user?.updateProfile({
       displayName: username,
       photoURL: url,
